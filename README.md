@@ -22,7 +22,7 @@ Total: 6 Practice Lab sessions provided for u to practise.
 
 
 -- need to upload labs and assignments( if i provide additionally ) in zipped file format for that day on ur portal 
--- AND START THINKING AND DESIGNING FROM NOW ON UR CAPSTONE PROJECT THAT U HAVE TO SUBMIT AT THE END .
+-- AND START THINKING ,DESIGNING AND WORKING FROM NOW ON UR CAPSTONE PROJECT THAT U HAVE TO SUBMIT AT THE END .
 
 
 ============================================================
