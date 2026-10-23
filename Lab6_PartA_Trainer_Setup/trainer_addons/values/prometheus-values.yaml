@@ -1,0 +1,9 @@
+# Lab-only, non-persistent Prometheus. Do not use these settings as a production baseline.
+server:
+  persistentVolume:
+    enabled: false
+  retention: "6h"
+alertmanager:
+  enabled: false
+pushgateway:
+  enabled: false

@@ -1,0 +1,8 @@
+# Limit the plugin to GPU-ready nodes. This chart may deploy its Node Feature
+# Discovery components separately; the GPU device plugin itself requires this label.
+nodeSelector:
+  nvidia.com/gpu.present: "true"
+tolerations:
+  - key: nvidia.com/gpu
+    operator: Exists
+    effect: NoSchedule

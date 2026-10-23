@@ -1,0 +1,25 @@
+apiVersion: karpenter.k8s.aws/v1
+kind: EC2NodeClass
+metadata:
+  name: default
+spec:
+  # Created by the upstream Karpenter CloudFormation bootstrap template.
+  role: "KarpenterNodeRole-${CLUSTER_NAME}"
+  # Karpenter selects the GPU-capable EKS AL2023 AMI for GPU instance types.
+  amiSelectorTerms:
+    - alias: al2023@latest
+  # Keep Karpenter-provisioned workers in the private subnets.
+  subnetSelectorTerms:
+    - tags:
+        karpenter.sh/discovery: "${CLUSTER_NAME}"
+        kubernetes.io/role/internal-elb: "1"
+  securityGroupSelectorTerms:
+    - tags:
+        karpenter.sh/discovery: "${CLUSTER_NAME}"
+  blockDeviceMappings:
+    - deviceName: /dev/xvda
+      ebs:
+        volumeSize: 100Gi
+        volumeType: gp3
+        encrypted: true
+        deleteOnTermination: true

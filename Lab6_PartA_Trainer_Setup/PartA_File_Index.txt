@@ -1,0 +1,17 @@
+Lab 6 Part A Complete Trainer Setup
+
+Source alignment: aicloud_lab6.docx, Part A steps 1-8.
+
+Files:
+- base-cluster/: Terraform for the shared base EKS cluster.
+- trainer_addons/02_install_karpenter.sh: Step 2 Karpenter IAM + controller install.
+- trainer_addons/manifests/gpu-nodepool.yaml: Step 3 shared GPU NodePool gpu-lab.
+- trainer_addons/manifests/gpu-ec2nodeclass.yaml.template: Step 4 EC2NodeClass default.
+- trainer_addons/05_install_nvidia_device_plugin.sh: Step 5 NVIDIA plugin.
+- trainer_addons/06_install_kserve_standard.sh: Step 6 KServe Standard.
+- trainer_addons/07_install_keda.sh: Step 7 KEDA.
+- trainer_addons/08_install_prometheus.sh: Step 8 Prometheus + required in-cluster service DNS alias.
+- trainer_addons/verify_part_a.sh: verification checks.
+- trainer_addons/install_part_a.sh: runs add-on steps 2-8 in order.
+
+Run bash trainer_addons/install_part_a.sh only AFTER base-cluster/ has been created and terraform state is safe.
